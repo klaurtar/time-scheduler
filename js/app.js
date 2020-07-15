@@ -8,38 +8,6 @@
 
   cacheDOMElements();
 
-  
-  // employees.push({
-  //   name: "Ryan Talbert",
-  //   monday: "All",
-  //   tuesday: "All",
-  //   wednesday: "Afternoon",
-  //   thursday: "night",
-  //   friday: "off",
-  //   saturday: "off",
-  //   sunday: "off",
-  //   hours: 20,
-  //   daysOff: [
-  //     '12/25/20',
-  //     '3/14/15'
-  //   ]
-  // })
-
-  // employees.push({
-  //   name: "Matthew Talbert",
-  //   monday: "All",
-  //   tuesday: "All",
-  //   wednesday: "Afternoon",
-  //   thursday: "night",
-  //   friday: "off",
-  //   saturday: "off",
-  //   sunday: "off",
-  //   hours: 20,
-  //   daysOff: [
-  //     '12/25/20',
-  //     '3/14/15'
-  //   ]
-  // })
  
   function renderEmployees(){
     $timeCardContainer.innerHTML = '';
