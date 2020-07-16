@@ -1,6 +1,6 @@
 (function app() {
   let employees = [];
-  const LOCALSTORAGE_KEY = "employee-session";
+  const LOCALSTORAGE_KEY = 'employee-session';
   let $timeCardContainer = undefined;
   let $newEmployeeButton = undefined;
   let $scheduleButton = undefined;
@@ -8,34 +8,31 @@
 
   cacheDOMElements();
 
- 
-  function renderEmployees(){
+  function renderEmployees() {
     $timeCardContainer.innerHTML = '';
-    employees.forEach(item => {
+    employees.forEach((item) => {
       const employee = new EmployeeCard(item);
       const employeeCard = employee.getEmployeeCard();
       const employeeName = item.name;
 
       employee.onDelete(() => {
         console.log('Delete button was clicked');
-        console.log(employeeName, " Employee Name");
+        console.log(employeeName, ' Employee Name');
 
-        const newEmployeeArr = employees.filter(person => person.name !== employeeName);
+        const newEmployeeArr = employees.filter(
+          (person) => person.name !== employeeName
+        );
         saveEmployees(newEmployeeArr);
-      })
+      });
 
       employee.onEdit(() => {
         const dialog = DialogManager.createDialog();
         dialog.open();
-
-
-      })
+      });
       $timeCardContainer.append(employeeCard);
-    })
+    });
   }
-    
-    
-    
+
   function renderNewEmployeeForm() {
     const dialog = DialogManager.createDialog();
     dialog.open();
@@ -47,19 +44,17 @@
 
       renderEmployees();
       saveEmployees(employees);
-    })
+    });
   }
 
-  
-
-  function cacheDOMElements(){
+  function cacheDOMElements() {
     $timeCardContainer = document.querySelector('#time-card-container');
     $newEmployeeButton = document.querySelector('#new-employee');
     $scheduleButton = document.querySelector('#scheduler');
     $test = document.querySelector('#test');
   }
 
-  function createEmployee(){
+  function createEmployee() {
     const nameField = document.querySelector('#name');
     const monday = document.querySelector('#monday');
     const tuesday = document.querySelector('#tuesday');
@@ -81,31 +76,27 @@
       saturday: saturday.value,
       sunday: sunday.value,
       hours: hours.value,
-      daysOff: [
-        date.value
-      ]
+      daysOff: [date.value],
     };
 
     employees.push(newEmployee);
   }
 
-  function retrieveEmployees(){
-    try{
-      employees = JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY)) || [];
+  function retrieveEmployees() {
+    try {
+      employees =
+        JSON.parse(window.localStorage.getItem(LOCALSTORAGE_KEY)) || [];
       console.log(employees);
-    }catch(e){
+    } catch (e) {
       console.log('There was an error retrieving employees: ', e);
     }
   }
 
-  function saveEmployees(arr){
-    window.localStorage.setItem(
-      LOCALSTORAGE_KEY,
-      JSON.stringify(arr)
-    );
+  function saveEmployees(arr) {
+    window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(arr));
   }
 
-  function setUpListeners(){
+  function setUpListeners() {
     $newEmployeeButton.addEventListener('click', renderNewEmployeeForm);
     $scheduleButton.addEventListener('click', () => {
       const test = scheduler.schedule(employees);
@@ -114,13 +105,12 @@
     });
   }
 
-  function init(){
+  function init() {
     retrieveEmployees();
     cacheDOMElements();
     setUpListeners();
 
     renderEmployees();
-
   }
   init();
 })();

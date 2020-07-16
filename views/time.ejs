@@ -1,31 +1,98 @@
 <%- include ("../partials/header") %>
 
+<!-- Start Calendar -->
+
+<div id="calendar">
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Monday</div>
+    <div class="day">
+      <div class="monday-afternoon time-slot time-slot-1"></div>
+      <div class="monday-afternoon time-slot time-slot-2"></div>
+      <div class="monday-evening time-slot time-slot-3"></div>
+      <div class="monday-evening time-slot time-slot-4"></div>
+      <div class="monday-evening time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Tuesday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Wednesday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Thursday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Friday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Saturday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="day-name" style="text-align: center;">Sunday</div>
+    <div class="day">
+      <div class="time-slot time-slot-1"></div>
+      <div class="time-slot time-slot-2"></div>
+      <div class="time-slot time-slot-3"></div>
+      <div class="time-slot time-slot-4"></div>
+      <div class="time-slot time-slot-5"></div>
+    </div>
+  </div>
+</div>
+
+<!-- End Calendar -->
+
 <div id="test"></div>
 
-<button id="scheduler">Schedule</button>
+<button class="btn btn-primary mx-auto d-block" id="scheduler">Schedule</button>
 
-<section id="employee">
-    <div id="employee-header" class="px-3">
-        <div style="visibility: hidden;">.</div>
-        <h1 class="text-center">Employees</h1>
-        <button id="new-employee" class="text-right btn btn-secondary">+</button>
-    </div>
+<section class="mt-3" id="employee">
+  <div id="employee-header" class="px-3">
+    <div style="visibility: hidden;">.</div>
+    <h1 class="text-center">Employees</h1>
+    <button id="new-employee" class="text-right btn btn-secondary">+</button>
+  </div>
 
-    <hr>
+  <hr />
 
-    <div class="container">
-        <div id="time-card-container" class="row">
-            
-            
-        </div>
-    </div>
-    
-
+  <div class="container">
+    <div id="time-card-container" class="row"></div>
+  </div>
 </section>
 
-
-
 <%- include ("../partials/footer") %>
-
-
-
