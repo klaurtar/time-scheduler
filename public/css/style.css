@@ -135,9 +135,12 @@ i {
 
   height: 125px;
   border: 1px solid white;
+
+  color: white;
+  font-weight: bold;
   width: 100%;
 
-  font-size: 5px;
+  font-size: 10px;
 }
 
 .test {
@@ -146,6 +149,9 @@ i {
 .time-slot {
   border: 1px solid white;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .time-slot-1 {
